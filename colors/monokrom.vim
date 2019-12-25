@@ -154,3 +154,17 @@ call s:hi('Special', s:fg_dark, s:none_list, s:none)
 call s:hi('Todo', s:white, s:none_list, s:bold)
 call s:hi('Underlined', s:fg, s:none_list, s:underline)
 " }}}
+
+" Git: {{{
+call s:hi('DiffAdd', s:green, s:bg, s:none)
+call s:hi('DiffChange', s:blue, s:bg, s:none)
+call s:hi('DiffDelete', s:red, s:bg, s:none)
+
+call s:hi('diffAdded', s:green, s:bg, s:none)
+call s:hi('diffRemoved', s:red, s:bg, s:none)
+
+" airblade/vim-gitgutter
+call s:hi('GitGutterAdd', s:green, s:bg, s:none)
+call s:hi('GitGutterChange', s:blue, s:bg, s:none)
+call s:hi('GitGutterDelete', s:red, s:bg, s:none)
+" }}}

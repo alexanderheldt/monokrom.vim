@@ -91,10 +91,6 @@ call s:hi('Folded', s:fg_dark, s:black, s:none)
 call s:hi('FoldColumn', s:fg_darker, s:none_list, s:none)
 call s:hi('SignColumn', s:fg_dark, s:none_list, s:none)
 
-" Search
-call s:hi('IncSearch', s:bg, s:splash, s:none)
-call s:hi('Search', s:bg, s:splash, s:none)
-
 " Line numbers
 call s:hi('LineNr', s:fg_darker, s:none_list, s:none)
 call s:hi('CursorLineNr', s:splash, s:bg_light, s:none)
@@ -167,4 +163,33 @@ call s:hi('diffRemoved', s:red, s:bg, s:none)
 call s:hi('GitGutterAdd', s:green, s:bg, s:none)
 call s:hi('GitGutterChange', s:blue, s:bg, s:none)
 call s:hi('GitGutterDelete', s:red, s:bg, s:none)
+" }}}
+
+" Search : {{{
+call s:hi('IncSearch', s:bg, s:splash, s:none)
+call s:hi('Search', s:bg, s:splash, s:none)
+
+"junegunn/fzf.vim
+call s:hi('Monokrom_FZF_Splash', s:splash, s:bg, s:none)
+call s:hi('Monokrom_FZF_CurrentLine', s:white, s:bg_light, s:none)
+call s:hi('Monokrom_FZF_Info', s:fg_darker, s:bg, s:none)
+hi! link Monokrom_FZF_Normal Normal
+
+if !exists('g:fzf_colors')
+    " https://github.com/junegunn/fzf/wiki/Color-schemes
+    let g:fzf_colors = {
+        \ 'fg':         ['fg', 'Monokrom_FZF_Normal'],
+        \ 'bg':         ['bg', 'Monokrom_FZF_Normal'],
+        \ 'fg+':        ['fg', 'Monokrom_FZF_CurrentLine'],
+        \ 'bg+':        ['bg', 'Monokrom_FZF_CurrentLine'],
+        \ 'hl':         ['fg', 'Monokrom_FZF_Splash'],
+        \ 'hl+':        ['fg', 'Monokrom_FZF_Splash'],
+        \ 'info':       ['fg', 'Monokrom_FZF_Info'],
+        \ 'prompt':     ['fg', 'Monokrom_FZF_Splash'],
+        \ 'pointer':    ['fg', 'Monokrom_FZF_Splash'],
+        \ 'marker':     ['fg', 'Monokrom_FZF_Splash'],
+        \ 'spinner':    ['fg', 'Monokrom_FZF_Splash'],
+        \ 'header':     ['fg', 'Monokrom_FZF_Splash'],
+        \}
+endif
 " }}}

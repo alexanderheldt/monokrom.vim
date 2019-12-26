@@ -40,7 +40,7 @@ let s:none_list = [s:none, s:none]
 function! s:hi(...)
     let group = a:1
     let fg    = get(a:, 2, s:fg)
-    let bg    = get(a:, 3, s:bg)
+    let bg    = get(a:, 3, s:none_list)
     let attr  = get(a:, 4, s:none)
 
     let cmd = ['hi', group]
@@ -98,7 +98,7 @@ call s:hi('CursorLineNr', s:splash, s:bg_light, s:none)
 " Matching bracket for the one under the cursor
 call s:hi('MatchParen', s:splash, s:none_list, s:bold)
 
-call s:hi('Normal')
+call s:hi('Normal', s:fg, s:bg, s:none)
 call s:hi('NonText', s:nothing, s:bg, s:none)
 hi! link Ignore NonText
 

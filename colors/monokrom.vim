@@ -186,7 +186,7 @@ call s:hi('GitGutterDelete', s:red)
 call s:hi('IncSearch', s:bg, s:splash)
 call s:hi('Search', s:bg, s:splash)
 
-"junegunn/fzf.vim
+" junegunn/fzf.vim
 call s:hi('Monokrom_FZF_Splash', s:splash)
 call s:hi('Monokrom_FZF_CurrentLine', s:white, s:bg_light)
 call s:hi('Monokrom_FZF_Info', s:fg_darker)

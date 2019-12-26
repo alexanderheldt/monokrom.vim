@@ -40,7 +40,7 @@ let s:none_list = [s:none, s:none]
 function! s:hi(...)
     let group = a:1
     let fg    = get(a:, 2, s:fg)
-    let bg    = get(a:, 3, s:bg)
+    let bg    = get(a:, 3, s:none_list)
     let attr  = get(a:, 4, s:none)
 
     let cmd = ['hi', group]
@@ -61,59 +61,59 @@ endfunction
 set background=dark
 
 " Column length lines
-call s:hi('ColorColumn', s:none_list, s:black, s:none)
+call s:hi('ColorColumn', s:none_list, s:black)
 
-call s:hi('Conceal', s:fg_darker, s:bg, s:none)
+call s:hi('Conceal', s:fg_darker)
 
 " Cursor
-call s:hi('Cursor', s:fg, s:splash, s:none)
-call s:hi('CursorColumn', s:none_list, s:bg_light, s:none)
-call s:hi('CursorLine', s:none_list, s:bg_light, s:none)
+call s:hi('Cursor', s:fg, s:splash)
+call s:hi('CursorColumn', s:none_list, s:bg_light)
+call s:hi('CursorLine', s:none_list, s:bg_light)
 
-call s:hi('Directory', s:splash, s:none_list, s:none)
+call s:hi('Directory', s:splash, s:none_list)
 
 " Tildes in the end of the buffer after the file end
-call s:hi('EndOfBuffer', s:nothing, s:bg, s:none)
+call s:hi('EndOfBuffer', s:nothing)
 
 " Messages
-call s:hi('Error', s:red, s:none_list, s:none)
-call s:hi('ErrorMsg', s:red, s:none_list, s:none)
-call s:hi('Warning', s:orange, s:none_list, s:none)
-call s:hi('WarningMsg', s:orange, s:none_list, s:none)
-call s:hi('ModeMsg', s:fg_dark, s:none_list, s:none)
-call s:hi('MoreMsg', s:fg_dark, s:none_list, s:none)
+call s:hi('Error', s:red)
+call s:hi('ErrorMsg', s:red)
+call s:hi('Warning', s:orange)
+call s:hi('WarningMsg', s:orange)
+call s:hi('ModeMsg', s:fg_dark)
+call s:hi('MoreMsg', s:fg_dark)
 
 " The vertical split between buffers
-call s:hi('VertSplit', s:bg_light, s:bg_light, s:none)
+call s:hi('VertSplit', s:bg_light, s:bg_light)
 
 " Folding
-call s:hi('Folded', s:fg_dark, s:black, s:none)
-call s:hi('FoldColumn', s:fg_darker, s:none_list, s:none)
-call s:hi('SignColumn', s:fg_dark, s:none_list, s:none)
+call s:hi('Folded', s:fg_dark, s:black)
+call s:hi('FoldColumn', s:fg_darker)
+call s:hi('SignColumn', s:fg_dark)
 
 " Line numbers
-call s:hi('LineNr', s:fg_darker, s:none_list, s:none)
-call s:hi('CursorLineNr', s:splash, s:bg_light, s:none)
+call s:hi('LineNr', s:fg_darker)
+call s:hi('CursorLineNr', s:splash, s:bg_light)
 
 " Matching bracket for the one under the cursor
 call s:hi('MatchParen', s:splash, s:none_list, s:bold)
 
-call s:hi('Normal')
-call s:hi('NonText', s:nothing, s:bg, s:none)
+call s:hi('Normal', s:fg, s:bg, s:none)
+call s:hi('NonText', s:nothing)
 hi! link Ignore NonText
 
 " Popup menu
-call s:hi('Pmenu', s:none_list, s:bg_lighter, s:none)
-call s:hi('PmenuSbar', s:none_list, s:bg_light, s:none)
-call s:hi('PmenuSel', s:splash, s:bg_light, s:none)
-call s:hi('PmenuThumb', s:none_list, s:splash, s:none)
+call s:hi('Pmenu', s:none_list, s:bg_lighter)
+call s:hi('PmenuSbar', s:none_list, s:bg_light)
+call s:hi('PmenuSel', s:splash, s:bg_light)
+call s:hi('PmenuThumb', s:none_list, s:splash)
 
-call s:hi('Question', s:fg_dark, s:none_list, s:none)
+call s:hi('Question', s:fg_dark)
 
-call s:hi('QuickFixLine', s:none_list, s:black, s:none)
+call s:hi('QuickFixLine', s:none_list, s:black)
 
 " Unprintable characters
-call s:hi('SpecialKey', s:fg_dark, s:none_list, s:none)
+call s:hi('SpecialKey', s:fg_dark)
 
 " Spelling
 call s:hi('SpellBad', s:red, s:none_list, s:underline)
@@ -122,57 +122,57 @@ call s:hi('SpellLocal', s:red, s:none_list, s:underline)
 call s:hi('SpellRare', s:red, s:none_list, s:underline)
 
 " Status line
-call s:hi('StatusLine', s:splash, s:bg_lighter, s:none)
-call s:hi('StatusLineNC', s:fg_dark, s:bg_light, s:none)
+call s:hi('StatusLine', s:splash, s:bg_lighter)
+call s:hi('StatusLineNC', s:fg_dark, s:bg_light)
 
 " Tabs
-call s:hi('TabLine', s:fg_dark, s:bg_light, s:none)
-call s:hi('TabLineFill', s:fg_dark, s:bg_light, s:none)
-call s:hi('TabLineSel', s:splash, s:bg_lighter, s:none)
+call s:hi('TabLine', s:fg_dark, s:bg_light)
+call s:hi('TabLineFill', s:fg_dark, s:bg_light)
+call s:hi('TabLineSel', s:splash, s:bg_lighter)
 
 call s:hi('Title', s:fg, s:none_list, s:bold)
 
 " Visual selection
-call s:hi('Visual', s:none_list, s:bg_lighter, s:none)
-call s:hi('VisualNOS', s:none_list, s:nothing, s:none)
+call s:hi('Visual', s:none_list, s:bg_lighter)
+call s:hi('VisualNOS', s:none_list, s:nothing)
 
-call s:hi('helpHyperTextJump', s:splash, s:bg, s:none)
+call s:hi('helpHyperTextJump', s:splash)
 " }}}
 
 " Syntax: {{{
-call s:hi('Comment', s:fg_darker, s:bg, s:none)
-call s:hi('Constant', s:splash, s:bg, s:none)
-call s:hi('Identifier', s:fg, s:bg, s:none)
-call s:hi('Statement', s:fg_dark, s:bg, s:none)
-call s:hi('PreProc', s:fg_dark, s:bg, s:none)
-call s:hi('Type', s:fg, s:bg, s:none)
-call s:hi('Special', s:fg_dark, s:none_list, s:none)
-call s:hi('Todo', s:white, s:none_list, s:bold)
+call s:hi('Comment', s:fg_darker)
+call s:hi('Constant', s:splash)
+call s:hi('Identifier', s:fg)
+call s:hi('Statement', s:fg_dark)
+call s:hi('PreProc', s:fg_dark)
+call s:hi('Type', s:fg)
+call s:hi('Special', s:fg_dark)
+call s:hi('Todo', s:white)
 call s:hi('Underlined', s:fg, s:none_list, s:underline)
 " }}}
 
 " Git: {{{
-call s:hi('DiffAdd', s:green, s:bg, s:none)
-call s:hi('DiffChange', s:blue, s:bg, s:none)
-call s:hi('DiffDelete', s:red, s:bg, s:none)
+call s:hi('DiffAdd', s:green)
+call s:hi('DiffChange', s:blue)
+call s:hi('DiffDelete', s:red)
 
-call s:hi('diffAdded', s:green, s:bg, s:none)
-call s:hi('diffRemoved', s:red, s:bg, s:none)
+call s:hi('diffAdded', s:green)
+call s:hi('diffRemoved', s:red)
 
 " airblade/vim-gitgutter
-call s:hi('GitGutterAdd', s:green, s:bg, s:none)
-call s:hi('GitGutterChange', s:blue, s:bg, s:none)
-call s:hi('GitGutterDelete', s:red, s:bg, s:none)
+call s:hi('GitGutterAdd', s:green)
+call s:hi('GitGutterChange', s:blue)
+call s:hi('GitGutterDelete', s:red)
 " }}}
 
 " Search : {{{
-call s:hi('IncSearch', s:bg, s:splash, s:none)
-call s:hi('Search', s:bg, s:splash, s:none)
+call s:hi('IncSearch', s:bg, s:splash)
+call s:hi('Search', s:bg, s:splash)
 
 "junegunn/fzf.vim
-call s:hi('Monokrom_FZF_Splash', s:splash, s:bg, s:none)
-call s:hi('Monokrom_FZF_CurrentLine', s:white, s:bg_light, s:none)
-call s:hi('Monokrom_FZF_Info', s:fg_darker, s:bg, s:none)
+call s:hi('Monokrom_FZF_Splash', s:splash)
+call s:hi('Monokrom_FZF_CurrentLine', s:white, s:bg_light)
+call s:hi('Monokrom_FZF_Info', s:fg_darker)
 hi! link Monokrom_FZF_Normal Normal
 
 if !exists('g:fzf_colors')

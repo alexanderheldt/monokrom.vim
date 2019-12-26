@@ -75,13 +75,27 @@ call s:hi('Directory', s:splash, s:none_list)
 " Tildes in the end of the buffer after the file end
 call s:hi('EndOfBuffer', s:nothing)
 
-" Messages
+" Messages : {{{
 call s:hi('Error', s:red)
 call s:hi('ErrorMsg', s:red)
 call s:hi('Warning', s:orange)
 call s:hi('WarningMsg', s:orange)
 call s:hi('ModeMsg', s:fg_dark)
 call s:hi('MoreMsg', s:fg_dark)
+
+" neoclide/coc.nvim
+call s:hi('CocInfoSign', s:blue)
+call s:hi('CocInfoHighlight', s:blue)
+call s:hi('CocInfoFloat', s:blue)
+
+call s:hi('CocWarningSign', s:orange)
+call s:hi('CocWarningHighlight', s:orange)
+call s:hi('CocWarningFloat', s:orange)
+
+call s:hi('CocErrorSign', s:red)
+call s:hi('CocErrorHighlight', s:red)
+call s:hi('CocErrorFloat', s:red)
+" }}}
 
 " The vertical split between buffers
 call s:hi('VertSplit', s:bg_light, s:bg_light)

@@ -103,9 +103,10 @@ call s:hi('NonText', s:nothing)
 hi! link Ignore NonText
 
 " Popup menu
-call s:hi('Pmenu', s:none_list, s:bg_lighter)
-call s:hi('PmenuSbar', s:none_list, s:bg_light)
-call s:hi('PmenuSel', s:splash, s:bg_light)
+call s:hi('NormalFloat', s:fg, s:black)
+call s:hi('Pmenu', s:fg, s:black)
+call s:hi('PmenuSbar', s:none_list)
+call s:hi('PmenuSel', s:splash)
 call s:hi('PmenuThumb', s:none_list, s:splash)
 
 call s:hi('Question', s:fg_dark)

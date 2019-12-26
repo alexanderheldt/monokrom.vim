@@ -1,6 +1,7 @@
 # monokrom.vim
 
 ![monokrom.vim](screenshot.png)
+![monokrom.vim](screenshot_popup.png)
 
 Supports both 256 color and true color modes.
 
